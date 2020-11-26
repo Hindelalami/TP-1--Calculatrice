@@ -26,7 +26,14 @@ public class Servlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Hello World ! ");
+		
+		String  nb1=request.getParameter("nb1");
+		String  nb2=request.getParameter("nb2");
+		 
+		if(nb1!=null && nb2!=null) {
+		 float somme = Float.valueOf(nb1).floatValue()+Float.valueOf(nb2).floatValue(); 
+		 response.getWriter().append("la somme de "+nb1+" et "+nb2+" est "+somme);
+	}
 	}
 
 	/**
